@@ -40,7 +40,8 @@ SELECT COUNT(DISTINCT company) FROM data_analyst_jobs WHERE (company IS NOT NULL
 SELECT company,ROUND(AVG(star_rating), 2) AS avg_rating FROM data_analyst_jobs WHERE (star_rating IS NOT NULL AND company IS NOT NULL AND review_count > 5000) GROUP BY company ORDER BY avg_rating DESC;
 
 -- 11. Find all the job titles that contain the word ‘Analyst’. How many different job titles are there?
-
+SELECT DISTINCT title FROM data_analyst_jobs WHERE title LIKE '%Analyst%';
+SELECT COUNT(DISTINCT title) FROM data_analyst_jobs WHERE title LIKE '%Analyst%';
 
 -- 12. How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? What word do these positions have in common?
 
