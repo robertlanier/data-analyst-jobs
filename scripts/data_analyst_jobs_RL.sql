@@ -55,3 +55,15 @@ Disregard any postings where the domain is NULL.
 Order your results so that the domain with the greatest number of hard to fill jobs is at the top.
 Which three industries are in the top 4 on this list? How many jobs have been listed for more than 3 weeks for each of the top 4?
 */
+-- SELECT * FROM data_analyst_jobs
+-- SELECT * FROM data_analyst_jobs WHERE (domain IS NOT NULL AND skill = 'SQL' AND days_since_posting > 21) ORDER BY days_since_posting DESC;
+-- SELECT * FROM data_analyst_jobs WHERE (domain IS NOT NULL AND skill = 'SQL' AND days_since_posting > 21) ORDER BY days_since_posting DESC LIMIT 4;
+SELECT domain, COUNT(domain) FROM data_analyst_jobs WHERE (domain IS NOT NULL AND skill = 'SQL' AND days_since_posting > 21) GROUP BY domain;
+SELECT domain, COUNT(domain) FROM data_analyst_jobs WHERE (domain IS NOT NULL AND skill = 'SQL' AND days_since_posting > 21) GROUP BY domain ORDER BY count DESC;
+SELECT domain, COUNT(domain) FROM data_analyst_jobs WHERE (domain IS NOT NULL AND skill = 'SQL' AND days_since_posting > 21) GROUP BY domain ORDER BY count DESC LIMIT 4;
+/*
+ 1st Consulting & Business Services w/ 5 jobs
+ 2nd Consumer Goods & Services w/ 2 jobs
+ 3rd Computers and Electronics w/ 1 job
+ 4th Internet and Software w/ 1 job
+ */
