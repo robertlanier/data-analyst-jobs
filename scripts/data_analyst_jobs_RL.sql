@@ -15,7 +15,7 @@ SELECT * FROM data_analyst_jobs LIMIT 10;
 
 -- 3. How many postings are in Tennessee? How many are there in either Tennessee or Kentucky?
 SELECT COUNT(location) FROM data_analyst_jobs WHERE location = 'TN';
-SELECT COUNT(location) FROM data_analyst_jobs WHERE location  IN ('TN', 'KY');
+SELECT COUNT(location) FROM data_analyst_jobs WHERE location IN ('TN', 'KY');
 
 -- 4. How many postings in Tennessee have a star rating above 4?
 SELECT COUNT(location) FROM data_analyst_jobs WHERE (location = 'TN' AND star_rating > 4);
